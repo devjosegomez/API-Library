@@ -49,7 +49,7 @@ export class Book extends Entity {
 
   @property({
     type: 'boolean',
-    default: false,
+    default: true,
   })
   isAvailable?: boolean;
 
