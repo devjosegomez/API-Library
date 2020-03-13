@@ -22,13 +22,14 @@ export class Book extends Entity {
   author: string;
 
   @property({
-    type: 'string',
+    type: 'array',
+    itemType: 'string',
     required: true,
   })
   category: string;
 
   @property({
-    type: 'date',
+    type: 'string',
     required: true,
   })
   publisedDate: string;
@@ -36,7 +37,7 @@ export class Book extends Entity {
   @property({
     type: 'array',
     itemType: 'string',
-    default: ["https://i.imgur.com/LwlRKj6.png"],
+    default: ['https://i.imgur.com/LwlRKj6.png'],
   })
   imgURL?: string[];
 
@@ -45,6 +46,12 @@ export class Book extends Entity {
     itemType: 'string',
   })
   borrowedBy?: string[];
+
+  @property({
+    type: 'boolean',
+    default: false,
+  })
+  isAvailable?: boolean;
 
   // Define well-known properties here
 
